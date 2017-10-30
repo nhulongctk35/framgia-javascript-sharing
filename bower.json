@@ -1,0 +1,22 @@
+{
+  "name": "reveal.js",
+  "version": "3.5.0",
+  "main": [
+    "js/reveal.js",
+    "css/reveal.css"
+  ],
+  "license": "MIT",
+  "description": "JavaScript Talks",
+  "authors": [
+    "Long Nhu Tran <nhulongctk10@gmail.com>"
+  ],
+  "dependencies": {
+    "headjs": "~1.0.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}
