@@ -58,8 +58,7 @@
 				</section>
 				<section>
 					<h2>var and let scoping</h2>
-					<pre>
-						<code class="js" data-trim contenteditable>
+					<pre><code class="js" data-trim contenteditable>
 							const varTest = () => {
 								var x = 1;
 								if (true) {
@@ -68,10 +67,8 @@
 								}
 								console.log(x);
 							}
-						</code>
-					</pre>
-					<pre>
-							<code class="js" data-trim contenteditable>
+						</code></pre>
+					<pre><code class="js" data-trim contenteditable>
 								const letTest = () => {
 									let x = 1;
 									if (true) {
@@ -80,34 +77,33 @@
 									}
 									console.log(x);
 								}
-							</code>
-						</pre>
+							</code></pre>
 				</section>
 				<section>
 					<h2>If you do not declare your variables.</h2>
-					<pre>
-						<code class="js" data-trim contenteditable>
+					<pre><code class="js" data-trim contenteditable>
 							const getUserName = () => {
 								name = "Holy Shit";
 								console.log(name);
 							}
 
 							getUserName();
-							console.log(name);
-						</code>
-					</pre>
+
+							console.log(name); // Holy Shit
+							console.log(window.name); // Holy Shit
+						</code></pre>
 				</section>
 			</section>
 			<section>
 				<section>
 					<h2>Variable Hoisting</h2>
-					<p>All variable declaration are hoisted to the top of the function. Please note.</p>
-					<p>Only variable declarations are hoisted to the top, not variable assignment (when the variable is assigned a value).</p>
+					<p>All variable declaration are hoisted to the top of the function.</p>
+					<p class="fragment fade-in"><span class="fragment highlight-red">Noted: </span> <span class="fragment highlight-blue">Only variable declarations are hoisted to the top, not variable assignment (when the variable is assigned a value)</span></p>
 				</section>
 				<section>
-					<h2>Variable Hoisting Example</h2>
-					<pre>
-						<code class="js" data-trim contenteditable>
+					<h2>Variable Hoisting</h2>
+					<pre><code class="js" data-trim>
+							// Source code
 							funcB();
 							console.log(a);
 
@@ -115,19 +111,21 @@
 							function funcB() {
 								console.log('Called b!');
 							}
-
-							// Another example
-							const showUserName = () => {
-								console.log("My name is " + name);
-								var name = "Holy";
-								console.log("My name is " + name);
+						</code></pre>
+					<pre><code class="js" data-trim>
+							// Hoisting
+							function funcB() {
+								console.log('Called b!');
 							}
-							showUserName();
-						</code>
-					</pre>
+							funcB();
+							var a;
+							console.log(a);
+							a = 'Hello World';
+						</code></pre>
 				</section>
 			</section>
-
+			<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+			</section>
 			<section>
 				<section>
 					<h2>JavaScript Objects</h2>
@@ -136,23 +134,7 @@
 						<a href="http://slides.com" target="_blank">http://slides.com</a>.
 					</p>
 				</section>
-				<section>
-					<h2>test</h2>
-					<pre>
-						<code class="js" data-trim contenteditable>
-							function varTest() {
-									var x = 1;
-									if (true) {
-										var x = 2;  // same variable!
-										console.log(x);  // 2
-									}
-									console.log(x);  // 2
-								}
-						</code>
-					</pre>
-				</section>
 			</section>
-
 			<section>
 				<h2>Objects Prototype</h2>
 				<p>
@@ -173,34 +155,7 @@
 			</section>
 
 			<section>
-				<section data-background="#dddddd">
-					<h2>Slide Backgrounds</h2>
-					<p>
-						Set
-						<code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-					</p>
-					<a href="#" class="navigate-down">
-						<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-					</a>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-					<h2>Image Backgrounds</h2>
-					<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat"
-				 data-background-size="100px">
-					<h2>Tiled Backgrounds</h2>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-				</section>
-				<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm"
-				 data-background-color="#000000">
-					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-						<h2>Video Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-					</div>
-				</section>
 				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-					<h2>... and GIFs!</h2>
 				</section>
 			</section>
 
@@ -289,7 +244,8 @@
 			<section>
 				<h2>Speaker View</h2>
 				<p>There's a
-					<a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+					<a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming
+					slide as well as your speaker notes.</p>
 				<p>Press the
 					<em>S</em> key to try it out.</p>
 
@@ -304,8 +260,8 @@
 				<p>
 					Set
 					<code>data-state="something"</code> on a slide and
-					<code>"something"</code> will be added as a class to the document element when the slide is open. This lets you apply broader style changes,
-					like switching the page background.
+					<code>"something"</code> will be added as a class to the document element when the slide is open. This lets you apply
+					broader style changes, like switching the page background.
 				</p>
 			</section>
 
@@ -367,7 +323,6 @@ Reveal.addEventListener( 'customevent', function() {
 	<script src="js/reveal.js"></script>
 
 	<script>
-
 		// More info https://github.com/hakimel/reveal.js#configuration
 		Reveal.initialize({
 			controls: true,
@@ -387,7 +342,6 @@ Reveal.addEventListener( 'customevent', function() {
 				{ src: 'plugin/notes/notes.js', async: true }
 			]
 		});
-
 	</script>
 
 </body>
