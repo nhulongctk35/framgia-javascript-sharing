@@ -41,19 +41,21 @@
 					<li>JavaScript Variable</li>
 					<li>Variable Scope and Hosting</li>
 					<li>JavaScript Objects</li>
-					<li>Objects Prototype (OOP in JS)</li>
+					<li>JavaScript Prototype</li>
+					<li>OOP in JavaScript</li>
 					<li>JavaScript Closure</li>
 					<li>JavaScript's Call, Bind and Apply</li>
 				</ul>
 			</section>
+			<!-- Agenda -->
 
 			<section>
 				<section>
 					<h2>JavaScript Variable</h2>
 					<p>var, let and const.</p>
 					<p>var is scoped to the nearest
-						<em>function block</em> and let is scoped to the nearest
-						<em>enclosing block</em>.</p>
+						<em class="fragment highlight-red">function block</em> and let is scoped to the nearest
+						<em class="fragment highlight-red">enclosing ({}) block</em>.</p>
 				</section>
 				<section>
 					<h2>var and let scoping</h2>
@@ -94,11 +96,14 @@
 				</section>
 			</section>
 			<section>
-
+				<!-- Variable scope and hoisting -->
 				<section>
 					<h2>Variable Hoisting</h2>
 					<p>All variable declaration are hoisted to the top of the function.</p>
-					<p class="fragment"><span class="fragment highlight-red">Noted: </span> <span class="fragment highlight-blue">Only variable declarations are hoisted to the top, not variable assignment (when the variable is assigned a value)</span></p>
+					<p class="fragment">
+						<span class="fragment highlight-red">Noted: </span>
+						<span class="fragment highlight-blue">Only variable declarations are hoisted to the top, not variable assignment (when the variable is assigned a value)</span>
+					</p>
 					<p class="fragment fade-in">
 						<pre class="fragment"><code class="js" data-trim>
 							// real code
@@ -138,10 +143,12 @@
 			</section>
 			<section data-background="images/coding-routine.gif">
 			</section>
+			<!-- funny image -->
 			<section>
 				<section>
 					<h2>JavaScript Objects</h2>
-					<p>An Object is an unordered list of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">primitive data types</a>						that is stored as a series of name-value pairs.</p>
+					<p>An Object is an unordered list of
+						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">primitive data types</a> that is stored as a series of name-value pairs.</p>
 					<p>
 						<pre class="fragment fade-in"><code class="js" data-trim contenteditable>
 							const obj = {
@@ -154,7 +161,9 @@
 				</section>
 				<section>
 					<h3>Property name</h3>
-					<p>Property name can be a <em class="highlight-red">string</em> or <em class="highlight-red">number</em>.</p>
+					<p>Property name can be a
+						<em class="highlight-red">string</em> or
+						<em class="highlight-red">number</em>.</p>
 					<p>
 						<pre><code class="js" data-trim>
 							var ageGroup = {
@@ -200,8 +209,10 @@
 				</section>
 				<section>
 					<h3>Serialize and Deserialize Objects</h3>
-					<small>Using <em class="fragment highlight-red">JSON.stringify</em> to Serialize (convert object to a string)</small>
-					<small>Using <em class="fragment highlight-red">JSON.parse </em> to Deserialize (convert string to object)</small>
+					<small>Using
+						<em class="fragment highlight-red">JSON.stringify</em> to Serialize (convert object to a string)</small>
+					<small>Using
+						<em class="fragment highlight-red">JSON.parse </em> to Deserialize (convert string to object)</small>
 					<p>
 						<pre class="fragment"><code class="js" data-trim>
 							var userInfo = {
@@ -215,13 +226,45 @@
 							var deserialize = JSON.parse(serialize);
 							// {username: "tinhyeucuatoi", email: "tinhyeucuatoi@gmail.com", password: "xxxxxx"}
 						</code></pre>
-
 					</p>
 				</section>
 			</section>
+			<!-- JavaScript object -->
+
 			<section>
 				<section>
-					<h2>Objects Prototype (OOP in JS)</h2>
+					<h2>JavaScript Prototype</h2>
+					<p>Every JavaScript function has a prototype property and you attach properties and methods on this prototype when you
+						want to implement inheritance</p>
+				</section>
+				<section>
+					<h3>JavaScript Prototype</h3>
+					<p>
+						<pre><code class="js" data-trim>
+							function Animal(name) {
+								this.name = name;
+							}
+
+							Animal.prototype.getName = function() {
+								console.log(`Hello, My name is ${this.name}`);
+							}
+
+							var cat = new Animal('Kitty');
+							cat.getName(); // Hello, My name is Kitty
+
+							var duck = new Animal('Delly');
+							duck.getName(); // Hello, My name is Delly
+					</code></pre>
+					</p>
+				</section>
+				<section data-background="images/funny02.gif">
+				</section>
+			</section>
+			<!-- JavaScript Prototype -->
+
+			<section>
+				<section>
+					<h2>OOP in JavaScript</h2>
 					<ul>
 						<li class="fragment highlight-red">Inheritance</li>
 						<li>Abstraction</li>
@@ -230,22 +273,50 @@
 					</ul>
 				</section>
 				<section>
+					<h3>Prototype Pattern</h3>
+					<p>
+						<pre><code class="js" data-trim>
+							function Employee(name, email) {
+								this.name = name;
+								this.email = email;
+								this.workingDay = [];
+							}
 
+							Employee.prototype = {
+								constructor: Employee,
+								changeEmail: function(newEmail) {
+									this.email = newEmail;
+								},
+								addWorkingDay: function(newValue) {
+									this.workingDay.push(newValue);
+									return this.workingDay;
+								},
+								getEmail: function() {
+									return this.email;
+								}
+							}
+
+							var tony = new Employee('Tony', 'tinhyeucuatoi@gmail.com');
+							console.log(tony.__proto__); // {constructor: ƒ, changeEmail: ƒ, addWorkingDay: ƒ, getEmail: ƒ}
+							tony.changeEmail('tony1102@gmail.com');
+							tony.getEmail(); // tony1102@gmail.com
+						</code></pre>
+					</p>
 				</section>
 			</section>
-
+			<!-- OOP in JS -->
 			<section>
 				<h2>JavaScript Closure</h2>
 				<p>
 					Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
 				</p>
 			</section>
+			<!-- JavaScript closure -->
 
 			<section>
 				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
 				</section>
 			</section>
-
 			<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 				<h2>JavaScript's Call, Bind and Apply</h2>
 				<p>
@@ -331,8 +402,7 @@
 			<section>
 				<h2>Speaker View</h2>
 				<p>There's a
-					<a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming
-					slide as well as your speaker notes.</p>
+					<a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
 				<p>Press the
 					<em>S</em> key to try it out.</p>
 
@@ -347,8 +417,8 @@
 				<p>
 					Set
 					<code>data-state="something"</code> on a slide and
-					<code>"something"</code> will be added as a class to the document element when the slide is open. This lets you apply
-					broader style changes, like switching the page background.
+					<code>"something"</code> will be added as a class to the document element when the slide is open. This lets you apply broader style changes,
+					like switching the page background.
 				</p>
 			</section>
 
