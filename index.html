@@ -41,10 +41,9 @@
 					<li>JavaScript Variable</li>
 					<li>Variable Scope and Hosting</li>
 					<li>JavaScript Objects</li>
-					<li>Objects Prototype</li>
+					<li>Objects Prototype (OOP in JS)</li>
 					<li>JavaScript Closure</li>
 					<li>JavaScript's Call, Bind and Apply</li>
-					<li>Object Oriented JavaScript (OOP in JS)</li>
 				</ul>
 			</section>
 
@@ -95,6 +94,7 @@
 				</section>
 			</section>
 			<section>
+
 				<section>
 					<h2>Variable Hoisting</h2>
 					<p>All variable declaration are hoisted to the top of the function.</p>
@@ -220,15 +220,18 @@
 				</section>
 			</section>
 			<section>
-				<h2>Objects Prototype</h2>
-				<p>
-					Press
-					<strong>ESC</strong> to enter the slide overview.
-				</p>
-				<p>
-					Hold down alt and click on any element to zoom in on it using
-					<a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-				</p>
+				<section>
+					<h2>Objects Prototype (OOP in JS)</h2>
+					<ul>
+						<li class="fragment highlight-red">Inheritance</li>
+						<li>Abstraction</li>
+						<li class="fragment highlight-red">Encapsulation</li>
+						<li>Polymorphism</li>
+					</ul>
+				</section>
+				<section>
+
+				</section>
 			</section>
 
 			<section>
@@ -263,20 +266,20 @@
 				<section>
 					<h2>Pretty Code</h2>
 					<pre><code class="js" data-trim contenteditable>
-	function linkify( selector ) {
-		if( supports3DTransforms ) {
+							function linkify( selector ) {
+								if( supports3DTransforms ) {
 
-			var nodes = document.querySelectorAll( selector );
+									var nodes = document.querySelectorAll( selector );
 
-			for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-				var node = nodes[i];
+									for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+										var node = nodes[i];
 
-				if( !node.className ) {
-					node.className += ' roll';
-				}
-			}
-		}
-	}
+										if( !node.className ) {
+											node.className += ' roll';
+										}
+									}
+								}
+							}
 						</code></pre>
 					<p>Code syntax highlighting courtesy of
 						<a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
@@ -284,20 +287,20 @@
 				<section>
 					<h2>Pretty Code 2</h2>
 					<pre><code class="js" data-trim contenteditable>
-	function linkify( selector ) {
-		if( supports3DTransforms ) {
+						function linkify( selector ) {
+							if( supports3DTransforms ) {
 
-			var nodes = document.querySelectorAll( selector );
+								var nodes = document.querySelectorAll( selector );
 
-			for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-				var node = nodes[i];
+								for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+									var node = nodes[i];
 
-				if( !node.className ) {
-					node.className += ' roll';
-				}
-			}
-		}
-	}
+									if( !node.className ) {
+										node.className += ' roll';
+									}
+								}
+							}
+						}
 						</code></pre>
 					<p>Code syntax highlighting courtesy of
 						<a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
@@ -421,7 +424,7 @@ Reveal.addEventListener( 'customevent', function() {
 				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
 				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
 				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.configure({tabReplace: '  '}); hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.configure({ tabReplace: '  ' }); hljs.initHighlightingOnLoad(); } },
 				{ src: 'plugin/zoom-js/zoom.js', async: true },
 				{ src: 'plugin/notes/notes.js', async: true }
 			]
