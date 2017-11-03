@@ -98,12 +98,24 @@
 				<section>
 					<h2>Variable Hoisting</h2>
 					<p>All variable declaration are hoisted to the top of the function.</p>
-					<p class="fragment fade-in"><span class="fragment highlight-red">Noted: </span> <span class="fragment highlight-blue">Only variable declarations are hoisted to the top, not variable assignment (when the variable is assigned a value)</span></p>
+					<p class="fragment"><span class="fragment highlight-red">Noted: </span> <span class="fragment highlight-blue">Only variable declarations are hoisted to the top, not variable assignment (when the variable is assigned a value)</span></p>
+					<p class="fragment fade-in">
+						<pre class="fragment"><code class="js" data-trim>
+							// real code
+							console.log(a);
+							var a = 'Hello Holy';
+
+							// javaScript hosting
+							var a;
+							console.log(a);
+							a = 'Hello Holy';
+						</code></pre>
+					</p>
 				</section>
 				<section>
 					<h2>Variable Hoisting</h2>
 					<pre><code class="js" data-trim>
-							// Source code
+							// real code
 							funcB();
 							console.log(a);
 
@@ -113,7 +125,7 @@
 							}
 						</code></pre>
 					<pre><code class="js" data-trim>
-							// Hoisting
+							// javaScript hoisting
 							function funcB() {
 								console.log('Called b!');
 							}
@@ -131,7 +143,7 @@
 					<h2>JavaScript Objects</h2>
 					<p>An Object is an unordered list of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">primitive data types</a>						that is stored as a series of name-value pairs.</p>
 					<p>
-						<pre><code class="js" data-trim contenteditable>
+						<pre class="fragment fade-in"><code class="js" data-trim contenteditable>
 							const obj = {
 								name: 'Holy',
 								age: 26,
@@ -141,14 +153,69 @@
 					</p>
 				</section>
 				<section>
-					<h2>JavaScript Objects</h2>
+					<h3>Property name</h3>
+					<p>Property name can be a <em class="highlight-red">string</em> or <em class="highlight-red">number</em>.</p>
 					<p>
-						<pre><code class="js" data-trim contenteditable>
-							const obj = {
-								name: 'Holy',
-								age: '26
+						<pre><code class="js" data-trim>
+							var ageGroup = {
+								30: "Children",
+								100:"Very Old",
 							};
+							console.log(ageGroup.30) // This will throw an error​
+
+							​// if the property name is a number,
+							// it has to be accessed with the bracket notation
+							console.log(ageGroup["30"]); // Children​
 						</code></pre>
+					</p>
+				</section>
+				<section>
+					<h3>Reference Data Type and Primitive Data Types</h3>
+					<p class="fragment highlight-blue">Reference data type’s value is stored as a reference.</p>
+					<p class="fragment highlight-blue">Primitive data type's value is stored directly on the variable.</p>
+				</section>
+				<section>
+					<h4>Primitive data types</h4>
+					<p>
+						<pre><code class="js" data-trim>
+							var person = 'Holy';
+							var anotherPerson = person;
+							person = 'Tony';
+
+							console.log(person); // Tony
+							console.log(anotherPerson); // Holy
+						</code></pre>
+					</p>
+					<h4>Reference data types</h4>
+					<p>
+						<pre><code class="js" data-trim>
+							var person = { name: 'Holy' };
+							var anotherPerson = person;
+							person.name = 'Tony';
+
+							console.log(person); // Tony
+							console.log(anotherPerson); // Tony
+						</code></pre>
+					</p>
+				</section>
+				<section>
+					<h3>Serialize and Deserialize Objects</h3>
+					<small>Using <em class="fragment highlight-red">JSON.stringify</em> to Serialize (convert object to a string)</small>
+					<small>Using <em class="fragment highlight-red">JSON.parse </em> to Deserialize (convert string to object)</small>
+					<p>
+						<pre class="fragment"><code class="js" data-trim>
+							var userInfo = {
+								username: 'tinhyeucuatoi',
+								email: 'tinhyeucuatoi@gmail.com',
+								password: 'xxxxxx'
+							};
+
+							var serialize = JSON.stringify(userInfo);
+							// {"username":"tinhyeucuatoi","email":"tinhyeucuatoi@gmail.com","password":"xxxxxx"}
+							var deserialize = JSON.parse(serialize);
+							// {username: "tinhyeucuatoi", email: "tinhyeucuatoi@gmail.com", password: "xxxxxx"}
+						</code></pre>
+
 					</p>
 				</section>
 			</section>
