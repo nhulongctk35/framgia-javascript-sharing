@@ -124,14 +124,31 @@
 						</code></pre>
 				</section>
 			</section>
-			<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+			<section data-background="images/coding-routine.gif">
 			</section>
 			<section>
 				<section>
 					<h2>JavaScript Objects</h2>
+					<p>An Object is an unordered list of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">primitive data types</a>						that is stored as a series of name-value pairs.</p>
 					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at
-						<a href="http://slides.com" target="_blank">http://slides.com</a>.
+						<pre><code class="js" data-trim contenteditable>
+							const obj = {
+								name: 'Holy',
+								age: 26,
+								showName: () => console.log(this.name),
+							};
+						</code></pre>
+					</p>
+				</section>
+				<section>
+					<h2>JavaScript Objects</h2>
+					<p>
+						<pre><code class="js" data-trim contenteditable>
+							const obj = {
+								name: 'Holy',
+								age: '26
+							};
+						</code></pre>
 					</p>
 				</section>
 			</section>
@@ -337,7 +354,7 @@ Reveal.addEventListener( 'customevent', function() {
 				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
 				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
 				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.configure({tabReplace: '  '}); hljs.initHighlightingOnLoad(); } },
 				{ src: 'plugin/zoom-js/zoom.js', async: true },
 				{ src: 'plugin/notes/notes.js', async: true }
 			]
