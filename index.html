@@ -35,7 +35,7 @@
 				</p>
 			</section>
 
-			<section>
+			<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 				<h2>Agenda</h2>
 				<ul>
 					<li>JavaScript Variable</li>
@@ -50,14 +50,14 @@
 			<!-- Agenda -->
 
 			<section>
-				<section>
+				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 					<h2>JavaScript Variable</h2>
 					<p>var, let and const.</p>
 					<p>var is scoped to the nearest
 						<em class="fragment highlight-red">function block</em> and let is scoped to the nearest
 						<em class="fragment highlight-red">enclosing ({}) block</em>.</p>
 				</section>
-				<section>
+				<section data-transition="slide" data-background-transition="zoom">
 					<h3>var and let scoping</h3>
 					<pre><code class="js" data-trim contenteditable>
 							const varTest = () => {
@@ -97,7 +97,7 @@
 			</section>
 			<section>
 				<!-- Variable scope and hoisting -->
-				<section>
+				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 					<h2>Hoisting In JavaScript</h2>
 					<p>All variable declaration are hoisted to the top of the function.</p>
 					<p class="fragment">
@@ -145,7 +145,7 @@
 			</section>
 			<!-- funny image -->
 			<section>
-				<section>
+				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 					<h2>JavaScript Objects</h2>
 					<p>An Object is an unordered list of
 						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">primitive data types</a> that is stored as a series of name-value pairs.</p>
@@ -178,7 +178,7 @@
 						</code></pre>
 					</p>
 				</section>
-				<section>
+				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 					<h3>Reference Data Type and Primitive Data Types</h3>
 					<p class="fragment highlight-blue">Reference data type’s value is stored as a reference.</p>
 					<p class="fragment highlight-blue">Primitive data type's value is stored directly on the variable.</p>
@@ -207,7 +207,7 @@
 						</code></pre>
 					</p>
 				</section>
-				<section>
+				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 					<h3>Serialize and Deserialize Objects</h3>
 					<small>Using
 						<em class="fragment highlight-red">JSON.stringify</em> to Serialize (convert object to a string)</small>
@@ -232,7 +232,7 @@
 			<!-- JavaScript object -->
 
 			<section>
-				<section>
+				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 					<h2>JavaScript Prototype</h2>
 					<p>Every JavaScript function has a prototype property and you attach properties and methods on this prototype when you
 						want to implement inheritance</p>
@@ -257,13 +257,18 @@
 					</code></pre>
 					</p>
 				</section>
+				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
+					<h3>JavaScript Prototype</h3>
+					<p>In JavaScript, you add methods and properties on the prototype property when you want instances of an object to inherit
+						those methods and properties</p>
+				</section>
 				<section data-background="images/funny02.gif">
 				</section>
 			</section>
 			<!-- JavaScript Prototype -->
 
 			<section>
-				<section>
+				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 					<h2>OOP in JavaScript</h2>
 					<ul>
 						<li class="fragment highlight-red">Inheritance</li>
@@ -300,15 +305,61 @@
 							console.log(tony.__proto__); // {constructor: ƒ, changeEmail: ƒ, addWorkingDay: ƒ, getEmail: ƒ}
 							tony.changeEmail('tony1102@gmail.com');
 							tony.getEmail(); // tony1102@gmail.com
+
+							var holy = new Employee('Holy', 'holy@gmailcom');
+							holy.getEmail(); // holy@gmail.com
 						</code></pre>
 					</p>
 				</section>
 			</section>
 			<!-- OOP in JS -->
-			<section>
+			<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 				<h2>JavaScript Closure</h2>
+				<p class="fragment fade-in highlight-blue">
+					A closure is an inner function that has access to the outer (enclosing) function’s variables.
+				</p>
+				<p class="fragment fade-in highlight-blue">A closure happens when you add a function inside another function.</p>
+			</section>
+			<section>
+				<h3>JavaScript Closure</h3>
 				<p>
-					Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
+					<pre><code class="js" data-trim>
+								function user(firstName, lastName) {
+									var outerVariable = 'Your name is ';
+
+									function getFullName() {
+										return outerVariable + firstName + ' ' + lastName;
+									}
+
+									return getFullName;
+								}
+
+								var getFullName = user('Tony', 'Hood');
+								console.log(getFullName());
+							</code></pre>
+				</p>
+			</section>
+			<section>
+				<h3>JavaScript Closure</h3>
+				<p>
+					<pre><code class="js" data-trim>
+						function funcReturnObject() {
+							var id = 10;
+
+							return {
+								getId: () => id,
+								setId: (newId) => {
+									id = newId;
+								}
+							};
+						}
+
+						var resultObj = funcReturnObject();
+						resultObj.getId(); // 10
+
+						resultObj.setId(999);
+						resultObj.getId(); // 999
+					</code></pre>
 				</p>
 			</section>
 			<!-- JavaScript closure -->
@@ -319,18 +370,7 @@
 			</section>
 			<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 				<h2>JavaScript's Call, Bind and Apply</h2>
-				<p>
-					Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-				</p>
-				<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-			</section>
-
-			<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-				<h2>Object Oriented JavaScript (OOP in JS)</h2>
-				<p>
-					You can override background transitions per-slide.
-				</p>
-				<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				<p></p>
 			</section>
 		</div>
 	</div>
