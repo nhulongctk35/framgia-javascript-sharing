@@ -11,7 +11,7 @@
 
 1. Install [Node.js](http://nodejs.org/) (4.0.0 or later)
 
-1. Clone the reveal.js repository
+1. Clone the framgia-javascript-sharing repository
    ```sh
    $ git clone url
    ```
@@ -26,7 +26,7 @@
    $ npm install
    ```
 
-1. Serve the presentation and monitor source files for changes
+1. View content
    ```sh
    $ npm start
    ```
@@ -41,3 +41,8 @@
 - [JavaScript Syntax Parsers, Execution Contexts, and Lexical Environments](https://www.youtube.com/watch?v=KYFTXszMQdk&index=5&list=PLz1XPAFf8IxbIU78QL158l_KlN9CvH5fg)
 - [Scope, ES6, and let](https://www.youtube.com/watch?v=eZU-KNhpg8A&list=PLz1XPAFf8IxbIU78QL158l_KlN9CvH5fg&index=15)
 - [JavaScript Object](https://www.youtube.com/watch?v=Yjo9_Q4O0HI&list=PLz1XPAFf8IxbIU78QL158l_KlN9CvH5fg&t=11s&index=16)
+
+## Style Guilde
+- [JavaScript Standard Style Guide](https://github.com/standard/standard)
+- [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)

@@ -59,7 +59,7 @@
 				</section>
 				<section data-transition="slide" data-background-transition="zoom">
 					<h3>var and let scoping</h3>
-					<pre><code class="js" data-trim contenteditable>
+					<pre><code class="js" data-trim>
 							const varTest = () => {
 								var x = 1;
 								if (true) {
@@ -68,8 +68,10 @@
 								}
 								console.log(x);
 							}
+
+							varTest();
 						</code></pre>
-					<pre><code class="js" data-trim contenteditable>
+					<pre class="fragment fade-in"><code class="js" data-trim>
 								const letTest = () => {
 									let x = 1;
 									if (true) {
@@ -78,20 +80,49 @@
 									}
 									console.log(x);
 								}
+
+								letTest();
+							</code></pre>
+				</section>
+				<section data-transition="slide" data-background-transition="zoom">
+					<h3>var and let scoping</h3>
+					<pre><code class="js" data-trim>
+							var a = 1;
+
+							function varTest2() {
+								if (true) {
+									var a = 10;
+								}
+								console.log(a);
+							}
+
+							varTest2();
+						</code></pre>
+					<pre><code class="js" data-trim>
+							var a = 1;
+
+							function letTest2() {
+								if (true) {
+									let a = 10;
+								}
+								console.log(a);
+							}
+
+							letTest2();
 							</code></pre>
 				</section>
 				<section>
-					<h2>If you do not declare your variables.</h2>
+					<h3>If you do not declare your variables.</h3>
 					<pre><code class="js" data-trim contenteditable>
 							const getUserName = () => {
-								name = "Holy Shit";
+								name = "Alibaba";
 								console.log(name);
 							}
 
 							getUserName();
 
-							console.log(name); // Holy Shit
-							console.log(window.name); // Holy Shit
+							console.log(name); // Alibaba
+							console.log(window.name); // Alibaba
 						</code></pre>
 				</section>
 			</section>
@@ -104,21 +135,21 @@
 						<span class="fragment highlight-red">Noted: </span>
 						<span class="fragment highlight-blue">Only variable declarations are hoisted to the top, not variable assignment (when the variable is assigned a value)</span>
 					</p>
-					<p class="fragment fade-in">
-						<pre class="fragment"><code class="js" data-trim>
-							// real code
-							console.log(a);
+					<p>
+						<pre class="fragment fade-in"><code class="js" data-trim>
 							var a = 'Hello Holy';
-
+						</code></pre>
+					</p>
+					<p>
+						<pre class="fragment fade-in"><code class="js" data-trim>
 							// javascript hoisting
 							var a;
-							console.log(a);
 							a = 'Hello Holy';
 						</code></pre>
 					</p>
 				</section>
 				<section>
-					<h2>Variable Hoisting</h2>
+					<h3>Variable Hoisting</h3>
 					<pre><code class="js" data-trim>
 							// real code
 							funcB();
@@ -130,7 +161,7 @@
 							}
 						</code></pre>
 					<pre><code class="js" data-trim>
-							// javaScript hoisting
+							// javascript hoisting
 							function funcB() {
 								console.log('Called b!');
 							}
