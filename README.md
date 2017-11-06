@@ -1,11 +1,12 @@
 # JavaScript Sharing Knowledge
 ## Table of contents
-- [Variable Scope and Hosting](#)
-- [JavaScript ](#)
-- [Objects](#)
+- [JavaScript Variable](#)
+- [Hoisting In JavaScript](#)
+- [JavaScript Objects](#)
+- [JavaScript Prototype](#)
+- [OOP in JavaScript](#)
 - [JavaScript Closure](#)
 - [JavaScript's Call, Bind and Apply](#)
-- [Object Oriented JavaScript (OOP in JS)](#)
 
 ## Setup
 
