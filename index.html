@@ -30,7 +30,7 @@
 				<h1>You Don't Know JS</h1>
 				<p>
 					<small>Created by
-						<a href="http://twitter.com/hakimel">@longntran</a>
+						<a href="https://nhulongctk35.github.io/github.io/" target="_blank">@longntran</a>
 					</small>
 				</p>
 			</section>
@@ -40,7 +40,7 @@
 				<ul>
 					<li>JavaScript Variable</li>
 					<li>Hoisting In JavaScript</li>
-					<li>JavaScript Objects</li>
+					<li class="fragment highlight-red">JavaScript Objects</li>
 					<li class="fragment highlight-red">JavaScript Prototype</li>
 					<li class="fragment highlight-red">OOP in JavaScript</li>
 					<li class="fragment highlight-red">JavaScript Closure</li>
@@ -115,7 +115,7 @@
 				</section>
 				<section>
 					<h3>If you do not declare your variables.</h3>
-					<pre><code class="js" data-trim contenteditable>
+					<pre><code class="js" data-trim>
 							const getUserName = () => {
 								name = "Alibaba";
 								console.log(name);
@@ -174,16 +174,15 @@
 						</code></pre>
 				</section>
 			</section>
-			<section data-background="images/coding-routine.gif">
-			</section>
+			<section data-background="images/coding-routine.gif"></section>
 			<!-- funny image -->
 			<section>
 				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 					<h2>JavaScript Objects</h2>
 					<p>An Object is an unordered list of
-						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">primitive data types</a> that is stored as a series of name-value pairs.</p>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank">primitive data types</a> that is stored as a series of name-value pairs.</p>
 					<p>
-						<pre class="fragment fade-in"><code class="js" data-trim contenteditable>
+						<pre class="fragment fade-in"><code class="js" data-trim>
 							const obj = {
 								name: 'Holy',
 								age: 26,
@@ -261,6 +260,27 @@
 						</code></pre>
 					</p>
 				</section>
+				<section>
+					<h3>Logging specific properties</h3>
+					<p>
+						<pre><code class="js" data-trim>
+							function Person(firstName, lastName, age) {
+								this.firstName = firstName;
+								this.lastName = lastName;
+								this.age = age;
+							}
+
+							var family = {};
+							family.mother = new Person("Susan", "Doyle", 32);
+							family.father = new Person("John", "Doyle", 33);
+							family.daughter = new Person("Lily", "Doyle", 5);
+							family.son = new Person("Mike", "Doyle", 8);
+
+							console.table(family);
+						</code></pre>
+					</p>
+				</section>
+				<section data-background="images/coding-routine.gif"></section>
 			</section>
 			<!-- JavaScript object -->
 
@@ -289,11 +309,6 @@
 							duck.getName(); // Hello, My name is Delly
 					</code></pre>
 					</p>
-				</section>
-				<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
-					<h3>JavaScript Prototype</h3>
-					<p>In JavaScript, you add methods and properties on the prototype property when you want instances of an object to inherit
-						those methods and properties</p>
 				</section>
 				<section data-background="images/funny02.gif">
 				</section>
@@ -403,7 +418,9 @@
 			</section>
 			<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 				<h2>JavaScript's Call, Bind and Apply</h2>
-				<p><a href="https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind" target="_blank">read more...</a></p>
+				<p>
+					<a href="https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind" target="_blank">read more...</a>
+				</p>
 			</section>
 			<section data-transition="slide" data-background="#001F3F" data-background-transition="zoom">
 				<h2>Documents</h2>
